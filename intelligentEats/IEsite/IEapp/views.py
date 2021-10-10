@@ -4,3 +4,6 @@ from django.shortcuts import render #for rendering templates
 
 def homepage(request):
     return render(request, 'index.html', context={})
+
+def resultspage(request):
+    return render(request, 'results.html', context={})
