@@ -3,26 +3,24 @@ from django.db import models
 # Create your models here.
 #scraper_articles, ingredients, food, ingredient_food
 class scraper_articles(models.Model):
-    id = models.IntegerField
-    article_url = models.CharField(max_length = 50000)
-    article_data = models.CharField(max_length = 50000)
-    ingredients_id = models.ForeignKey('ingredients', models.SET_NULL, blank=True, null=True)
+    id                    = models.IntegerField
+    article_url           = models.CharField(max_length = 50000)
+    article_data          = models.CharField(max_length = 50000)
+    ingredients_id        = models.ForeignKey('ingredients', models.SET_NULL, blank=True, null=True)
     classification_result = models.IntegerField
  
 class ingredients(models.Model):
-    id = models.IntegerField
-    name = models.CharField(max_length = 50000)
-    #FIGURE OUT HOW TO GET FROM scraper_articles.classification_result FOR BELOW
-    score = models.IntegerField
+    id             = models.IntegerField
+    name           = models.CharField(max_length = 50000)
+    within_food    = models.ManyToManyField('food', through='ingredient_food')
+    score          = models.IntegerField
 
 class food(models.Model):
-    id = models.IntegerField
-    name = models.CharField(max_length = 50000)
-    #FIGURE OUT HOW TO GET FROM ingredients.score FOR BELOW
-    score = models.IntegerField
+    id                 = models.IntegerField
+    name               = models.CharField(max_length = 50000)
+    ingredient_content = models.ManyToManyField('ingredients', through='ingredient_food')
+    score              = models.IntegerField
 
 class ingredient_food(models.Model):
-    #FIGURE OUT HOW TO GET FROM ingredients.id FOR BELOW
-    ingredient_id = models.IntegerField
-    #FIGURE OUT HOW TO GET FROM food.id FOR BELOW
-    food_id = models.IntegerField
+    Ingredient = models.ForeignKey('ingredients', models.SET_NULL, blank=True, null=True)
+    Food       = models.ForeignKey('food', models.SET_NULL, blank=True, null=True)
