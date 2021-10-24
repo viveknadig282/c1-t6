@@ -6,9 +6,9 @@ class scraper_articles(models.Model):
     id = models.IntegerField
     article_url = models.CharField(max_length = 50000)
     article_data = models.CharField(max_length = 50000)
-    ingredients_id = models.IntegerField
+    ingredients_id = models.ForeignKey('ingredients', models.SET_NULL, blank=True, null=True)
     classification_result = models.IntegerField
-
+ 
 class ingredients(models.Model):
     id = models.IntegerField
     name = models.CharField(max_length = 50000)
