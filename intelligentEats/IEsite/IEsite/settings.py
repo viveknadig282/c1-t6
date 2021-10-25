@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'IEapp.apps.IeappConfig', #registering the IEapp app
+    #third party apps
+    'django_extensions',
+    #own apps
+    'IEapp.apps.IeappConfig', 
 ]
 
 MIDDLEWARE = [
