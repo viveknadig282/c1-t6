@@ -6,6 +6,7 @@ class scraper_articles(models.Model):
     id                    = models.IntegerField(primary_key=True)
     article_url           = models.CharField(max_length = 50000)
     article_data          = models.CharField(max_length = 50000)
+    #fix this on delete setting!!
     ingredients_id        = models.ForeignKey('ingredients', models.SET_NULL, blank=True, null=True)
     classification_result = models.IntegerField(default=0)
  
@@ -24,5 +25,6 @@ class food(models.Model):
     
 
 class ingredient_food(models.Model):
+    id             = models.IntegerField(primary_key=True)
     Ingredient = models.ForeignKey('ingredients', models.SET_NULL, blank=True, null=True)
     Food       = models.ForeignKey('food', models.SET_NULL, blank=True, null=True)
