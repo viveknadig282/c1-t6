@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'IEapp', #registering the IEapp app
+    #third party apps
+    'django_extensions',
+    #own apps
+    'IEapp.apps.IeappConfig', 
 ]
 
 MIDDLEWARE = [
@@ -79,7 +82,7 @@ WSGI_APPLICATION = 'IEsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ingredients',
+        'NAME': 'iedb',
         'USER': 'c1t6',
         'PASSWORD': 'c1t6pass',
         'HOST': 'localhost',
