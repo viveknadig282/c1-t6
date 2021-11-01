@@ -20,6 +20,6 @@ class FoodAPI:
         response.raise_for_status()
         json_response = response.json()
         ingredient_str = json_response['hints'][0]['food']['foodContentsLabel']
-        ingredients = ingredient_str.split('; ')
+        ingredients = ingredient_str.lower().split('; ')
         
         return ingredients
