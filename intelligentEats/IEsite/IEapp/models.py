@@ -1,8 +1,8 @@
 from django.db import models
 
 # Create your models here.
-#scraper_articles, Ingredients, Food, IngredientFood
-class ScraperArticles(models.Model):
+#scraper_articles, ingredients, food, ingredient_food
+class scraper_articles(models.Model):
     id                    = models.IntegerField(primary_key=True)
     article_url           = models.CharField(max_length = 50000)
     article_data          = models.CharField(max_length = 50000)
