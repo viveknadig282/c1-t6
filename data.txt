@@ -1,0 +1,15 @@
+Original Data before formatting to separate tables (split into 4 files) 
+https://drive.google.com/file/d/13vL5lnXZUUHqaXWCmZnqQnjvQQavZFMX/view?usp=sharing
+https://drive.google.com/file/d/1Duj0kiOiXL62b-G1LJQ03NeIVddp6ntc/view?usp=sharing
+https://drive.google.com/file/d/1bRLzMFKcmZBIyq-1JJokdfiNCn7YLXdX/view?usp=sharing
+https://drive.google.com/file/d/15nPkTnuqQsq9TQwVsqnEihdLyW6InfnV/view?usp=sharing
+
+CSV Files ready for direct PostgreSQL import
+scraper_articles table data (split into 4 files)
+https://drive.google.com/file/d/1TPOqvtw5JX-QQVdJDHxD_3ghEbCLOAhX/view?usp=sharing
+https://drive.google.com/file/d/1nhxQHmzN_KyFgptxkoFk274tj6TIUz07/view?usp=sharing
+https://drive.google.com/file/d/11icyLANGeX29UHpbPYoJazt5tuqOKYUQ/view?usp=sharing
+https://drive.google.com/file/d/1rMc-BriFbY7biN37n8j_c8gUG7qzwBeC/view?usp=sharing
+
+Ingredients table data
+https://drive.google.com/file/d/1UglggPdskZ_57uMa7nM9XoL3d_QXDV5M/view?usp=sharing
