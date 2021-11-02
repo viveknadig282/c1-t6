@@ -5,7 +5,9 @@ import {
   Route,
   // Link
 } from "react-router-dom";
-import Barscan from './pages/BarcodeScanner'
+import BarcodeScanner from './Components/Scanner/BarcodeScanner';
+import Navbar from './Components/Navbar/Navbar';
+import Results from './pages/Results';
 
 function App() {
   return (
@@ -13,12 +15,14 @@ function App() {
         <Router>
           <div>
             <Switch>
-              <Route path="/barcode_scanner">
-                <Barscan/>
+              <Route path="/results">
+                <Results/>
               </Route>
             </Switch>
           </div>
         </Router>
+        {/* <Navbar/>
+        <BarcodeScanner/> */}
     </div>
   );
 }

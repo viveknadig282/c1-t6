@@ -8,8 +8,8 @@ class Scanner extends Component {
         inputStream: {
           type: 'LiveStream',
           constraints: {
-            width: 640,
-            height: 320,
+            width: 400,
+            height: 200,
             facingMode: 'environment',
           },
         //   area: { // defines rectangle of the detection/localization area
@@ -21,7 +21,7 @@ class Scanner extends Component {
         },
         locator: {
             halfSample: true,
-            patchSize: "large", // x-small, small, medium, large, x-large
+            patchSize: "medium", // x-small, small, medium, large, x-large
             debug: {
                 showCanvas: true,
                 showPatches: false,
