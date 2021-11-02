@@ -1,6 +1,6 @@
 import csv 
 
-from IEapp.models import ScraperArticles, Ingredients, Food, ingredient_food
+from IEapp.models import ScraperArticles, Ingredients, Food, IngredientFood
 
 #This will be called to run 
 def run(): 
@@ -13,7 +13,7 @@ def run():
     ScraperArticles.objects.all().delete() # get rid of any extra data stored in the database 
     Ingredients.objects.all().delete()      # ditto
     Food.objects.all().delete()             # ditto 
-    
+    IngredientFood.objects.all().delete()  # ditto
 
     for index, file in enumerate(to_read):
         current_file = open(file, encoding='utf-8') # define the file to open and how to read it 
@@ -40,10 +40,10 @@ def run():
                 
 
             if index == 2: 
-                ingredient_food(
+                IngredientFood(
                 id         = row[0], 
-                ingredient = Ingredients.objects.get(pk = row[1]), 
-                food       = Food.objects.get(pk = row[2])
+                Ingredient = Ingredients.objects.get(pk = row[1]), 
+                Food       = Food.objects.get(pk = row[2])
                 ).save()
             
         

@@ -2,12 +2,12 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import scraper_articles, ingredients, food, ingredient_food
+from .models import ScraperArticles, Ingredients, Food, IngredientFood
 
-admin.site.register(scraper_articles)
+admin.site.register(ScraperArticles)
 
-admin.site.register(ingredients)
+admin.site.register(Ingredients)
 
-admin.site.register(food)
+admin.site.register(Food)
 
-admin.site.register(ingredient_food)
+admin.site.register(IngredientFood)
