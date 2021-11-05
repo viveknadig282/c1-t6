@@ -14,6 +14,9 @@ class ingredients(models.Model):
     name           = models.CharField(max_length = 50000)
     within_food    = models.ManyToManyField('food', through='ingredient_food')
     score          = models.IntegerField
+    
+    class Meta:
+        db_table = 'ingredients'
 
 class food(models.Model):
     id                 = models.IntegerField
