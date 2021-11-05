@@ -16,14 +16,14 @@ class FoodAPI:
     def get_ingredients(self, upc_code):
         url = 'https://api.edamam.com/api/food-database/v2/parser'
         
-        response = requests.get(url, params={'app_id':self.app_id, 'app_key':self.app_key, 'upc':upc_code, 'nutrition-type':'cooking'}, headers={'Accept':'application/json'})
+        try:  
+            response = requests.get(url, params={'app_id':self.app_id, 'app_key':self.app_key, 'upc':upc_code, 'nutrition-type':'cooking'}, headers={'Accept':'application/json'})
         
-        response.raise_for_status()
-        json_response = response.json()
-        if json_response['hints'] is not None and json_response['hints'][0] is not None and json_response['hints'][0]['food'] is not None and json_response['hints'][0]['food']['foodContentsLabel'] is not None:
+            response.raise_for_status()
+            json_response = response.json()
             ingredient_str = json_response['hints'][0]['food']['foodContentsLabel']
             ingredients = ingredient_str.lower().split('; ')
         
             return ingredients
-        else:
+        except:
             return []
