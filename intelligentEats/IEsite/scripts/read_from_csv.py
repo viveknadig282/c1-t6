@@ -51,7 +51,6 @@ def run():
                         foods = Food.objects.get(pk = 1)
                         ).save()
                     elif current_table == ScraperArticle:
-                        x = 1
                         current_table(
                         id = row['ID'],
                         article_url = row['ARTICLE_LINK'],
