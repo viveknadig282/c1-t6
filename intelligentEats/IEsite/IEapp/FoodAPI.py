@@ -3,7 +3,7 @@ import urllib
 import json
 
 class FoodAPI:
-    #following constants should be replaced by production version and moved into settings.py
+    #following constants should be replaced by production version and moved
     app_id = '5d3057d6'
     app_key = '0a61f1c8fb7cfe232b441f8faa2afd4f'
 
