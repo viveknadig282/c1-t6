@@ -3,6 +3,8 @@ import BarcodeGenerator from '../Scanner/BarcodeGenerator';
 import './Receipt.css';
 function Receipt(props){ 
 
+    
+
     return(
         <div className="receipt p-3">
             {/*barcodeVal needs to be a string */}
@@ -12,7 +14,7 @@ function Receipt(props){
             </p>
             <h4>Details</h4>
             <ul className="text-left">
-                <li className=" h6 text-large">
+                <li className="h6 text-large">
                     apples
                 </li>
             </ul>

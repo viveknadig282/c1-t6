@@ -19,7 +19,32 @@ function Itemlist(props){
             title: "ingredient3",
             score: 4.57,
             description: "etc"
-        }
+        },
+        {
+            title: "ingredient3",
+            score: 4.57,
+            description: "etc"
+        },
+        {
+            title: "ingredient3",
+            score: 4.57,
+            description: "etc"
+        },
+        {
+            title: "ingredient3",
+            score: 4.57,
+            description: "etc"
+        },
+        {
+            title: "ingredient3",
+            score: 4.57,
+            description: "etc"
+        },
+        {
+            title: "ingredient3",
+            score: 4.57,
+            description: "etc"
+        },
     ]
 
     
