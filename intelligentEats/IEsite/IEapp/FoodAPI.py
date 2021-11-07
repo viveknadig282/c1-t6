@@ -12,7 +12,6 @@ class FoodAPI:
             self.app_id = app_id
             self.app_key = app_key
 
-    #this function will throw an exception in case of error. Please catch.
     def get_ingredients(self, upc_code):
         url = 'https://api.edamam.com/api/food-database/v2/parser'
         
