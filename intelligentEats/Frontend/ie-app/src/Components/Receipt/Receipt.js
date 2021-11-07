@@ -15,8 +15,11 @@ function Receipt(props){
             <h4>Details</h4>
             <ul className="text-left">
                 <li className="h6 text-large">
-                    apples
+                    ID: 0019221
                 </li>
+                {/* <li className="h6 text-large">
+                    Details: Apples
+                </li> */}
             </ul>
             <div className="text-muted text-left mt-5">
                 Not your item? Try again or Submit a help request

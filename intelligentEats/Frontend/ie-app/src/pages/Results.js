@@ -3,6 +3,7 @@ import BarcodeGenerator from '../Components/Scanner/BarcodeGenerator';
 import BarcodeScanner from '../Components/Scanner/BarcodeScanner';
 import Itemlist from '../Components/Item/Itemlist';
 import Receipt from '../Components/Receipt/Receipt';
+import Search from '../Components/Search/Search';
 import './Results.css';
 import {Col, Row, Container} from 'react-bootstrap';
 
