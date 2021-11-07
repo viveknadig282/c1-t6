@@ -13,7 +13,6 @@ function BarcodeGenerator(props) {
     // };
 
     useEffect(() => {
-
         setBarcode(props.barcodeVal)
     }, [props])
 

@@ -1,0 +1,22 @@
+.receipt{
+    /* margin: 50px; */
+    margin-left: 10vw;
+    border-radius: 5px;
+    width: 350px;
+    box-shadow: 0 5px 20px 3px #EEF1F7;
+    
+}
+
+.receipt > ul{
+    max-width: 50%;
+}
+
+.success-text{
+    font-weight: 550;
+    font-size: x-large;
+}
+
+.detail-item{
+    float: left;
+}
+
