@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import './Search.css';
+
 
 class Search extends Component {
     constructor(props) {
@@ -17,15 +19,16 @@ class Search extends Component {
   
     handleSubmit(event) {
       event.preventDefault();
+      console.log(this.state.value);
+    //   fetch('http://127.0.0.1:8000/upc/' + this.state.value).then(response => console.log(response));
     }
   
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
           <label>
-            <textarea value={this.state.value} onChange={this.handleChange} />
+            <input className="search-input p-4" placeholder="Enter A UPC Code..." value={this.state.value} onChange={this.handleChange} />
           </label>
-          <input type="submit" value="Submit" />
         </form>
       );
     }

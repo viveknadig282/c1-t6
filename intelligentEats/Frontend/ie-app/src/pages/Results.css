@@ -1,8 +1,23 @@
 .hero-img{
-    height: 300px;
+    height: 375px;
     background: #181718;
 }
 
 .score-text{
     color: white;
+    font-weight: 500!important;
+}
+
+.search{
+    width: 50vw;
+    border-radius: 3px;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.healthScore{
+    display: inline;
+    color: #8DBB69;
+    font-size: 10vw;
 }

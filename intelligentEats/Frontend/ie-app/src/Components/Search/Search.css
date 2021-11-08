@@ -1,0 +1,16 @@
+.search-input{
+    position: absolute;
+    top: 335px;
+    right: 31%;
+    width: 35vw;
+    max-width: 900px;
+    min-width: 300px;
+    box-shadow: 0px 8px 20px rgb(0 0 0 / 6%);
+    border: none;
+    border-radius: 3px;
+}
+
+.search-input:focus{
+    outline: none;
+}
+
