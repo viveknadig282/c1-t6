@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1>yo mama</h1>
+    <ul>
+
+    {% for food in food_list %}
+        <li>{{ food }}
+        <li>{{ food.ingredients.all }}
+        </li>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
