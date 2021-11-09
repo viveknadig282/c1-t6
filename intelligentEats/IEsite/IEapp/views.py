@@ -1,6 +1,7 @@
 from django.shortcuts import render #for rendering templates
 from .models import Food, Ingredient, IngredientFood, ScraperArticle
-# Create your views here.
+from IEapp.FoodAPI import FoodAPI
+from django.http import JsonResponse
 
 def homepage(request):
     return render(request, 'index.html', context={})
