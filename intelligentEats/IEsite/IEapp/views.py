@@ -15,3 +15,11 @@ def foodpage(request):
 def ingredientpage(request):
     ingredient_list = Ingredient.objects.all()
     return render(request, 'ingredient_list.html', context={'ingredient_list':ingredient_list})
+
+def ingredient_scores(request, ingredient_list):
+    return JsonResponse(list(ingredients.objects.filter(name__in=ingredient_list.split(',')).values('name', 'score')) , safe=False)
+
+def upc(request, upc_code):
+    api = FoodAPI(None, None)
+    return JsonResponse(list(ingredients.objects.filter(name__in=api.get_ingredients(upc_code)).values('name', 'score')) , safe=False)
+
