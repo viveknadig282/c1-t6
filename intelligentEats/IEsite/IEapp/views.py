@@ -7,3 +7,10 @@ def homepage(request):
 
 def resultspage(request):
     return render(request, 'results.html', context={})
+
+def ingredient_scores(request, ingredient_list):
+    return JsonResponse(list(ingredients.objects.filter(name__in=ingredient_list.split(',')).values('name', 'score')) , safe=False)
+
+def upc(request, upc_code):
+    api = FoodAPI(None, None)
+    return JsonResponse(list(ingredients.objects.filter(name__in=api.get_ingredients(upc_code)).values('name', 'score')) , safe=False)
