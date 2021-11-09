@@ -17,14 +17,14 @@ def ingredientpage(request):
     ingredient_list = Ingredient.objects.all()
     return render(request, 'ingredient_list.html', context={'ingredient_list':ingredient_list})
 
-def ingredient_scores(request, ingredient_list):
-    query_result = get_data(ingredient_list.split(','))
-    return JsonResponse(list(query_result)) , safe=False)
-
 def upc(request, upc_code):
     api = FoodAPI(None, None)
     query_result = get_data(api.get_ingredients(upc_code))
     return JsonResponse(list(get_data(query_result)) , safe=False)
 
+def ingredient_scores(request, ingredient_list):
+    query_result = get_data(ingredient_list.split(','))
+    return JsonResponse(list(query_result)) , safe=False)
+
 def get_data(ingredient_array):
-    return ingredients.objects.filter(name__in=ingredient_array).values('name', 'score')
+    return Ingredient.objects.filter(name__in=ingredient_array).values('name', 'score')
