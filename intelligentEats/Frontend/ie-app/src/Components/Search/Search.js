@@ -17,8 +17,24 @@ class Search extends Component {
       this.setState({value: event.target.value});
     }
   
+    
     handleSubmit(event) {
       event.preventDefault();
+
+      let headers = new Headers();
+
+      headers.append('Access-Control-Allow-Origin', 'http://localhost:3000');
+      headers.append('Access-Control-Allow-Credentials', 'true');
+
+      fetch('http://127.0.0.1:8000/upc/' + this.state.value, 
+      {
+        headers: headers
+      }).then(response => response.json).then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+     });
       console.log(this.state.value);
     //   fetch('http://127.0.0.1:8000/upc/' + this.state.value).then(response => console.log(response));
     }
@@ -32,6 +48,8 @@ class Search extends Component {
         </form>
       );
     }
+
+
 
 }
 export default Search;
