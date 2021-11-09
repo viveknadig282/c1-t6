@@ -22,6 +22,8 @@ class Food(models.Model):
     score              = models.FloatField(default= 1.0)
     ingredients        = models.ManyToManyField('Ingredient', through='IngredientFood')
     
+    def __str__(self):
+        return self.name + ' ' + str(self.score)
 
 class IngredientFood(models.Model):
     id             = models.IntegerField(primary_key=True)

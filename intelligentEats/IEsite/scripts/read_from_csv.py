@@ -48,7 +48,7 @@ def run():
                         current_table(
                         id = row['id'],
                         ingredients = Ingredient.objects.get(pk = int(row['ingredient_id'])),
-                        foods = Food.objects.get(pk = 1)
+                        foods = Food.objects.get(pk = int(row['food_id']))
                         ).save()
                     elif current_table == ScraperArticle:
                         current_table(
