@@ -1,14 +1,12 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import BarcodeGenerator from '../Scanner/BarcodeGenerator';
 import './Receipt.css';
 function Receipt(props){ 
 
-    
-
     return(
         <div className="receipt p-3">
             {/*barcodeVal needs to be a string */}
-            <BarcodeGenerator barcodeVal={"010801"}/> 
+            <BarcodeGenerator barcodeVal={(props.upc) ? props.upc : 'NaN'}/> 
             <p className="success-text">
                 SUCCESS!
             </p>

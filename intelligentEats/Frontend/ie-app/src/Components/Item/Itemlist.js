@@ -6,55 +6,57 @@ function Itemlist(props){
 
     // maybe use useState
     // let itemList;
+    let ingredients = [];
 
-    // if(props){
-    //     // itemList = props.list;
-    //     console.log(props.listttttt);
-    // }
+    if(props){
+        // itemList = props.list;
+        ingredients = [...props.itemList]; 
+    }
+    console.log(...ingredients);
 
     
-    const ingredients = [
-        {
-            title: "ingredient1",
-            score: 5.45,
-            description: "etc"
-        },
-        {
-            title: "ingredient2",
-            score: -3.23,
-            description: "etc"
-        },
-        {
-            title: "ingredient3",
-            score: 4.57,
-            description: "etc"
-        },
-        {
-            title: "ingredient3",
-            score: 4.57,
-            description: "etc"
-        },
-        {
-            title: "ingredient3",
-            score: 4.57,
-            description: "etc"
-        },
-        {
-            title: "ingredient3",
-            score: 4.57,
-            description: "etc"
-        },
-        {
-            title: "ingredient3",
-            score: 4.57,
-            description: "etc"
-        },
-        {
-            title: "ingredient3",
-            score: 4.57,
-            description: "etc"
-        },
-    ]
+    // const ingredients = [
+    //     {
+    //         title: "ingredient1",
+    //         score: 5.45,
+    //         description: "etc"
+    //     },
+    //     {
+    //         title: "ingredient2",
+    //         score: -3.23,
+    //         description: "etc"
+    //     },
+    //     {
+    //         title: "ingredient3",
+    //         score: 4.57,
+    //         description: "etc"
+    //     },
+    //     {
+    //         title: "ingredient3",
+    //         score: 4.57,
+    //         description: "etc"
+    //     },
+    //     {
+    //         title: "ingredient3",
+    //         score: 4.57,
+    //         description: "etc"
+    //     },
+    //     {
+    //         title: "ingredient3",
+    //         score: 4.57,
+    //         description: "etc"
+    //     },
+    //     {
+    //         title: "ingredient3",
+    //         score: 4.57,
+    //         description: "etc"
+    //     },
+    //     {
+    //         title: "ingredient3",
+    //         score: 4.57,
+    //         description: "etc"
+    //     },
+    // ]
 
     
     return(
@@ -65,7 +67,7 @@ function Itemlist(props){
                         <li key={key} className="item">
                             {/* <Link to={value.link} className="link"> */}
                             {/* </Link> */}
-                            <Item title={value.title} score={value.score} description={value.description}/>
+                            <Item title={value.name} score={value.score}/>
                         </li>
                     )
                 }

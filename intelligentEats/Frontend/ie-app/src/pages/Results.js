@@ -13,6 +13,7 @@ class Results extends Component {
       super(props);
       this.state = {
         upc: '',
+        onSubmit: false,
         itemList: [],
         healthScore: 0
       };
@@ -23,11 +24,14 @@ class Results extends Component {
   
     handleChange(event) {
       this.setState({upc: event.target.value});
+      this.setState({onSubmit: false});
     }
   
     
     handleSubmit(event) {
       event.preventDefault();
+
+      this.setState({onSubmit: true});
       
       fetch(`http://127.0.0.1:8000/upc/${this.state.upc}`,{
         method: 'GET',
@@ -77,10 +81,10 @@ class Results extends Component {
                 <Row className="m-5">
                     <Col>
                         <h1>Items</h1>
-                        <Itemlist/>
+                        <Itemlist itemList={(this.state.onSubmit) ? this.state.itemList : ''}/>
                     </Col>
                     <Col>
-                        <Receipt/>
+                        <Receipt upc={(this.state.onSubmit) ? this.state.upc : ''}/>
                     </Col>
                 </Row>
             </div>
