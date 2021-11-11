@@ -9,55 +9,54 @@ import {Col, Row, Container} from 'react-bootstrap';
 
 
 class Results extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-          upc: '',
-          itemList: [],
-          healthScore: 0
-        };
+  constructor(props) {
+      super(props);
+      this.state = {
+        upc: '',
+        itemList: [],
+        healthScore: 0
+      };
+  
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+    }
+  
+    handleChange(event) {
+      this.setState({upc: event.target.value});
+    }
+  
     
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-      }
-    
-      handleChange(event) {
-        this.setState({upc: event.target.value});
-      }
-    
+    handleSubmit(event) {
+      event.preventDefault();
       
-      handleSubmit(event) {
-        event.preventDefault();
+      fetch(`http://127.0.0.1:8000/upc/${this.state.upc}`,{
+        method: 'GET',
+      })
+      .then(async (response) => await response.json())
+      .then(response => {
+
+        this.setState({itemList: response});
+
+        let scoreList = [];
+        response.map(item => {
+          scoreList.push(item.score);
+        });
+
+        let sum = (scoreList.reduce((previousValue, currentValue) => previousValue + currentValue));
+
+        this.setState({healthScore: Math.round((sum/scoreList.length) * 100) / 100});
         
-        fetch(`http://127.0.0.1:8000/upc/${this.state.upc}`,{
-          method: 'GET',
-        })
-        .then(async (response) => await response.json())
-        .then(response => {
 
-          this.setState({itemList: response});
+        console.log(this.state.itemList);
+        console.log(this.state.healthScore);
 
-          let scoreList = [];
-          response.map(item => {
-            scoreList.push(item.score);
-          });
-
-          let sum = (scoreList.reduce((previousValue, currentValue) => previousValue + currentValue));
-
-          this.setState({healthScore: Math.round((sum/scoreList.length) * 100) / 100});
-          
-
-          console.log(this.state.itemList);
-          console.log(this.state.healthScore);
-
-          
-        })
-        .catch(error => {
-          console.log(error);
-       });
-        console.log(this.state.upc);
-      }
+        
+      })
+      .catch(error => {
+        console.log(error);
+      });
+      console.log(this.state.upc);
+    }
 
     render(){
         return(

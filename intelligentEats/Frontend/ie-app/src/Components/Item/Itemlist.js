@@ -3,6 +3,15 @@ import Item from './Item';
 import './Itemlist.css';
 
 function Itemlist(props){ 
+
+    // maybe use useState
+    // let itemList;
+
+    // if(props){
+    //     // itemList = props.list;
+    //     console.log(props.listttttt);
+    // }
+
     
     const ingredients = [
         {
