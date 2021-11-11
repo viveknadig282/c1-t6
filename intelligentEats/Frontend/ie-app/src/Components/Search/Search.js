@@ -21,15 +21,18 @@ class Search extends Component {
     handleSubmit(event) {
       event.preventDefault();
 
-      let headers = new Headers();
+      // let headers = new Headers();
 
-      headers.append('Access-Control-Allow-Origin', 'http://localhost:3000');
-      headers.append('Access-Control-Allow-Credentials', 'true');
-
-      fetch('http://127.0.0.1:8000/upc/' + this.state.value, 
-      {
-        headers: headers
-      }).then(response => response.json).then(response => {
+      // headers.append('Access-Control-Allow-Origin', '*');
+      // headers.append('Access-Control-Allow-Credentials', 'true');
+      // headers.append('Content-Type', 'text/plain');
+      
+      fetch(`http://127.0.0.1:8000/upc/${this.state.value}`,{
+        method: 'GET',
+        // headers: headers
+      })
+      .then(async (response) => await response.json())
+      .then(response => {
         console.log(response);
       })
       .catch(error => {
