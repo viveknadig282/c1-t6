@@ -23,14 +23,16 @@
 
 #title-desc{
     display: grid;
-    flex: 30%;
+    flex: 70%;
+    text-align: inline;
     /* place-items: center; */
 }
   
 #score {
-    flex: 70%;
+    flex: 30%;
     font-weight: 600;
     color: #43A15C;
+    text-align: inline;
     /* font-size: xx-large; */
   }
 #title{

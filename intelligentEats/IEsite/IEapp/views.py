@@ -26,5 +26,6 @@ def ingredient_scores(request, ingredient_list):
     query_result = get_data(ingredient_list.split(','))
     return JsonResponse(list(query_result), safe=False)
 
+
 def get_data(ingredient_array):
     return Ingredient.objects.filter(name__in=ingredient_array).values('name', 'score')
