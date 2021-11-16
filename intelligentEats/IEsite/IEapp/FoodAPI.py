@@ -16,7 +16,12 @@ class FoodAPI:
         url = 'https://api.edamam.com/api/food-database/v2/parser'
         
         try:  
-            response = requests.get(url, params={'app_id':self.app_id, 'app_key':self.app_key, 'upc':upc_code, 'nutrition-type':'cooking'}, headers={'Accept':'application/json'})
+            response = requests.get(url, 
+                                    params={'app_id':self.app_id, 
+                                            'app_key':self.app_key, 
+                                            'upc':upc_code, 
+                                            'nutrition-type':'cooking'}, 
+                                    headers={'Accept':'application/json'})
         
             response.raise_for_status()
             json_response = response.json()
