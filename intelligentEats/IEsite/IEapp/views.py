@@ -19,8 +19,14 @@ def ingredientpage(request):
 
 def upc(request, upc_code):
     api = FoodAPI(None, None)
-    query_result = get_data(api.get_ingredients(upc_code))
-    return JsonResponse(list(query_result), safe=False)
+    api_result = api.get_ingredients(upc_code)
+    query_result = get_data(api_result['ingredients'])
+
+    return JsonResponse({
+        'ingredient_scores': list(query_result),
+        'description': api_result['description'],
+        'image_url': api_result['image_url']
+    }, safe=False)
 
 def ingredient_scores(request, ingredient_list):
     query_result = get_data(ingredient_list.split(','))
