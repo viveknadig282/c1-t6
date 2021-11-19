@@ -27,7 +27,14 @@ class FoodAPI:
             json_response = response.json()
             ingredient_str = json_response['hints'][0]['food']['foodContentsLabel']
             ingredients = ingredient_str.lower().split('; ')
-        
-            return ingredients
+            description = json_response['hints'][0]['food']['label']
+            image_url = json_response['hints'][0]['food']['image']
+            
+            
+            return {
+                'ingredients': ingredients,
+                'description': description,
+                'image_url': image_url
+            }
         except:
             return []
