@@ -36,7 +36,7 @@ class Results extends Component {
       fetch(`http://127.0.0.1:8000/upc/${this.state.upc}`,{
         method: 'GET',
       })
-      .then(async (response) => await response.json())
+      .then((response) => response.json())
       .then(response => {
 
         this.setState({itemList: response});
@@ -88,6 +88,7 @@ class Results extends Component {
                     </Col>
                 </Row>
             </div>
+            {/* <BarcodeScanner/> */}
             </>
             
         )

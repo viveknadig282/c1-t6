@@ -21,6 +21,8 @@ class Search extends Component {
     handleSubmit(event) {
       event.preventDefault();
 
+      // window.location.replace("http://localhost:3000/results");
+
       // let headers = new Headers();
 
       // headers.append('Access-Control-Allow-Origin', '*');

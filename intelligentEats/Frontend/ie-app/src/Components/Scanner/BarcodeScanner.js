@@ -28,7 +28,7 @@ class BarcodeScanner extends Component {
         </Link>
         <span>Barcode Scanner</span> */}
         
-        <Paper variant="outlined" style={{marginTop:30, width:640, height:320}}>
+        <Paper className="m-auto" variant="outlined" style={{marginTop:30, width:400, height:320}}>
           <Scanner onDetected={this._onDetected} />
         </Paper>
 

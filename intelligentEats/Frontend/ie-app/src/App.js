@@ -8,6 +8,7 @@ import {
 import BarcodeScanner from './Components/Scanner/BarcodeScanner';
 import Navbar from './Components/Navbar/Navbar';
 import Results from './pages/Results';
+import Home from './pages/Home';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
         <Router>
           <div>
             <Switch>
+              <Route exact path="/">
+                <Home/>
+              </Route>
               <Route path="/results">
                 <Results/>
               </Route>
