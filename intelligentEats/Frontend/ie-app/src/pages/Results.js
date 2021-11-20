@@ -15,6 +15,8 @@ class Results extends Component {
         upc: '',
         onSubmit: false,
         itemList: [],
+        item_image: '',
+        item_desc: '',
         healthScore: 0
       };
   
@@ -39,25 +41,28 @@ class Results extends Component {
       .then((response) => response.json())
       .then(response => {
 
-        this.setState({itemList: response});
+        this.setState({itemList: response.ingredient_scores});
 
         let scoreList = [];
-        response.map(item => {
+        this.state.itemList.map(item => {
           scoreList.push(item.score);
         });
 
         let sum = (scoreList.reduce((previousValue, currentValue) => previousValue + currentValue));
 
         this.setState({healthScore: Math.round((sum/scoreList.length) * 100) / 100});
-        
+        this.setState({item_desc: response.description});
+        this.setState({item_image: response.image_url});
 
-        console.log(this.state.itemList);
-        console.log(this.state.healthScore);
+
+        console.log(this.state.item_desc);
+        console.log(this.state.item_image);
 
         
       })
       .catch(error => {
         console.log(error);
+        alert("try again");
       });
       console.log(this.state.upc);
     }
@@ -68,7 +73,7 @@ class Results extends Component {
             <Container className="hero-img" fluid>
                 <div className="display-1 p-0 m-0 score-text"> 
                     We rank your item with a health score of  
-                    <p className="healthScore m-0 p-0">{this.state.healthScore}</p>
+                    <p className="healthScore m-0 p-0"> {this.state.healthScore}</p>
                 </div>
                 <form onSubmit={this.handleSubmit}>
                     <label>
@@ -84,7 +89,7 @@ class Results extends Component {
                         <Itemlist itemList={(this.state.onSubmit) ? this.state.itemList : ''}/>
                     </Col>
                     <Col>
-                        <Receipt upc={(this.state.onSubmit) ? this.state.upc : ''}/>
+                        <Receipt upc={(this.state.onSubmit) ? this.state.upc : ''} image={this.state.item_image} description={this.state.item_desc}/>
                     </Col>
                 </Row>
             </div>

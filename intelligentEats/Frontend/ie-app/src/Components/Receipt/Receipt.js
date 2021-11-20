@@ -6,19 +6,20 @@ function Receipt(props){
     return(
         <div className="receipt p-3">
             {/*barcodeVal needs to be a string */}
+           {/* {props.image && <img alt="food image "src={props.image}/>} */}
             <BarcodeGenerator barcodeVal={(props.upc) ? props.upc : 'NaN'}/> 
             <p className="success-text">
-                SUCCESS!
+                {props.upc ? "SUCCESS!" : ""}
             </p>
             <h4>Details</h4>
-            <ul className="text-left">
+            {props.upc && <ul className="text-left">
                 <li className="h6 text-large">
-                    ID: 0019221
+                    Item: {props.description}
                 </li>
                 {/* <li className="h6 text-large">
                     Details: Apples
                 </li> */}
-            </ul>
+            </ul>}
             <div className="text-muted text-left mt-5">
                 Not your item? Try again or Submit a help request
             </div>
